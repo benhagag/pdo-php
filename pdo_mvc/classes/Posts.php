@@ -23,6 +23,7 @@ class Posts
     public function getAllPosts(){
 //ben gala
 //        sdfsdf
+//        sasdfd
     }
 
 }
