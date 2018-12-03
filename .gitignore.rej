@@ -1,6 +1,0 @@
-diff a/.gitignore b/.gitignore	(rejected hunks)
-@@ -0,2 +0 @@
--.idea
--*/.idea/workspace.xml */.idea/tasks.xml
-\ No newline at end of file
-+'.idea' 
