@@ -21,13 +21,6 @@ class Posts
     }
 
     public function getAllPosts(){
-//ben gala
-//        sdfsdf
-//        sasdfd
-        //sdfsdfsdf
-        //sdfsdf
-//        /sfsd
-//        sdfsdf
     }
 
 }
