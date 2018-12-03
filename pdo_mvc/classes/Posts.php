@@ -20,4 +20,8 @@ class Posts
         $this->conn = $this->connectionClass->getConnection();
     }
 
+    public function getAllPosts(){
+
+    }
+
 }
