@@ -6,7 +6,7 @@
  * Time: 17:53
  */
 
-require 'Connection.php';
+require_once('Connection.php');
 
 class Posts
 {
@@ -18,9 +18,19 @@ class Posts
     {
         $this->connectionClass = Connection::connection();
         $this->conn = $this->connectionClass->getConnection();
+        $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     }
 
-    public function getAllPosts(){
+    public function getAllPosts()
+    {
+        try{
+        $stmt = $this->conn->prepare("SELECT * FROM posts");
+        $stmt->execute();
+           return $stmt;
+        }catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+
     }
 
 }

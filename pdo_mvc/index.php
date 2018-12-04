@@ -1,10 +1,9 @@
 <?php
 
 spl_autoload_register(function ($class_name) {
-    include 'classes/'.$class_name . '.php';
+    include 'classes/' . $class_name . '.php';
 });
 
-$all=new Connection();
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,7 +22,10 @@ $all=new Connection();
 </head>
 <body>
 
-
+<?php
+$posts = new Posts();
+$postsResult = $posts->getAllPosts();
+?>
 <div class="container">
     <h1> posts </h1>
     <table class="table" width="100%">
@@ -35,6 +37,16 @@ $all=new Connection();
         </tr>
         </thead>
         <tbody>
+        <?php
+        while ($row = $postsResult->fetch(PDO::FETCH_ASSOC)){
+        ?>
+        <tr>
+            <td><?php echo $row['title'] ?></td>
+            <td><?php echo $row['body'] ?></td>
+            <td><?php echo $row['author'] ?></td>
+        </tr>
+            <?php } ?>
+
 
         </tbody>
     </table>
