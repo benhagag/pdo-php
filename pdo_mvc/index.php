@@ -18,10 +18,13 @@ spl_autoload_register(function ($class_name) {
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="assets/index.css">
+
     <title>PDO MVC</title>
 </head>
 <body>
 
+<?php require 'header.php';?>
 <?php
 $posts = new Posts();
 $postsResult = $posts->getAllPosts();
